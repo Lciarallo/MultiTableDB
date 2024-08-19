@@ -121,6 +121,7 @@ class AppViewModel(
         actorId.value = actor.id
     }
 
+
     fun insertActorsAndMovies() {
         viewModelScope.launch {
 
