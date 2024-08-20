@@ -180,11 +180,11 @@ fun MoviesActorsScreen(
                 }
             }
 
-            selectedMovie.value?.let { movie ->
+            /*selectedMovie.value?.let { movie ->
                 Button(
                     onClick = {
                         viewModel.deleteMovie(movie)
-                        selectedMovie.value = null
+                        selectedMovie.value = Movie(0,"")
                         if (!movies.contains(movie)) {
                             navController.popBackStack()
                         }
@@ -199,7 +199,7 @@ fun MoviesActorsScreen(
                 ) {
                     Text(text = "Excluir ${movie.name}")
                 }
-            }
+            }*/
         }
 
         Column(
@@ -272,8 +272,9 @@ fun MovieDetailsScreen(
 
         Button(
             onClick = {
-                navController.popBackStack()
+
                 viewModel.deleteMovie(movieWithActors.movie)
+                navController.popBackStack()
             },
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color.Red,

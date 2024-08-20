@@ -1,9 +1,13 @@
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material3.Button
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -42,7 +46,14 @@ fun FormAssociarFilmeComAtor(navController: NavController, viewModel: AppViewMod
                 .padding(vertical = 8.dp)
                 .clickable { movieDropdownExpanded.value = true },
             readOnly = true,
-            label = { Text("Filme") }
+            label = { Text("Filme") },
+            trailingIcon = {
+                IconButton(onClick = {movieDropdownExpanded.value =  !movieDropdownExpanded.value}) {
+                    Icon(Icons.Default.ArrowDropDown, contentDescription = "Filme" )
+
+                }
+            }
+
         )
 
         DropdownMenu(
